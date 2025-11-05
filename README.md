@@ -7,22 +7,6 @@ A comprehensive machine learning project that analyzes sentiment from Twitter te
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-1.3.2-orange.svg)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-## 📋 Table of Contents
-
-- [Overview](#overview)
-- [Features](#features)
-- [Project Structure](#project-structure)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Model Performance](#model-performance)
-- [Technologies Used](#technologies-used)
-- [Project Structure](#project-structure)
-- [Screenshots](#screenshots)
-- [Future Improvements](#future-improvements)
-- [Contributing](#contributing)
-- [License](#license)
-- [Author](#author)
-
 ## 🎯 Overview
 
 This project implements a sentiment analysis system that classifies Twitter text as either **Positive** or **Negative**. The model is trained on 1.6 million tweets using Logistic Regression with Count Vectorization, achieving **79.99% accuracy**.
