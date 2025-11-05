@@ -211,33 +211,8 @@ Visit the `/analytics` route to see:
 - **Pandas**: Data manipulation
 - **NumPy**: Numerical operations
 
-## 📸 Screenshots
-
-### Home Page
-![Home Page](indexpage%20image.png)
-
-### Results Page
-![Results Page](resultpage%20image.png)
-
 ### Analytics Dashboard
 Visit `/analytics` to see interactive charts and metrics.
-
-## 🔮 Future Improvements
-
-- [ ] Add neutral sentiment classification
-- [ ] Implement other ML models (SVM, Random Forest, Neural Networks)
-- [ ] Add model comparison functionality
-- [ ] Implement batch prediction
-- [ ] Add user authentication
-- [ ] Save prediction history
-- [ ] Add export functionality (CSV, JSON)
-- [ ] Implement API rate limiting
-- [ ] Add Docker containerization
-- [ ] Deploy to cloud platform (Heroku, AWS, etc.)
-- [ ] Add multilingual support
-- [ ] Implement real-time Twitter API integration
-- [ ] Add sentiment trends over time
-- [ ] Improve preprocessing (handle emojis, URLs, mentions)
 
 ## 🤝 Contributing
 
@@ -249,17 +224,13 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📝 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## 👤 Author
 
-**Your Name**
+**Anuj Patel**
 
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
-- Email: your.email@example.com
+- LinkedIn: https://www.linkedin.com/in/anujpatel04/
+- Email: anuj.patel.29dec@gmail.com
 
 ## 🙏 Acknowledgments
 
@@ -268,22 +239,13 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - **Flask**: For web framework
 - **Community**: For open-source libraries and resources
 
-## 📚 References
-
-1. [Sentiment140 Dataset](https://www.kaggle.com/datasets/kazanova/sentiment140)
-2. [Scikit-learn Documentation](https://scikit-learn.org/stable/)
-3. [Flask Documentation](https://flask.palletsprojects.com/)
-4. Go, A., Bhayani, R. and Huang, L., 2009. Twitter sentiment classification using distant supervision. CS224N Project Report, Stanford, 1(2009), p.12.
-
 ## 📞 Support
 
 If you have any questions or encounter issues:
 - Open an issue on GitHub
-- Contact: your.email@example.com
+- Contact: anuj.patel.29dec@gmail.com
 
 ---
-
-**Made with ❤️ for Capstone Project**
 
 *This project demonstrates the application of machine learning in natural language processing for sentiment analysis.*
 
