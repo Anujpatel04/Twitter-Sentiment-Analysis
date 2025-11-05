@@ -214,23 +214,6 @@ Visit the `/analytics` route to see:
 ### Analytics Dashboard
 Visit `/analytics` to see interactive charts and metrics.
 
-## 🔮 Future Improvements
-
-- [ ] Add neutral sentiment classification
-- [ ] Implement other ML models (SVM, Random Forest, Neural Networks)
-- [ ] Add model comparison functionality
-- [ ] Implement batch prediction
-- [ ] Add user authentication
-- [ ] Save prediction history
-- [ ] Add export functionality (CSV, JSON)
-- [ ] Implement API rate limiting
-- [ ] Add Docker containerization
-- [ ] Deploy to cloud platform (Heroku, AWS, etc.)
-- [ ] Add multilingual support
-- [ ] Implement real-time Twitter API integration
-- [ ] Add sentiment trends over time
-- [ ] Improve preprocessing (handle emojis, URLs, mentions)
-
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
@@ -244,7 +227,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 👤 Author
 
-**Anuj Patel*
+**Anuj Patel**
 
 - LinkedIn: https://www.linkedin.com/in/anujpatel04/
 - Email: anuj.patel.29dec@gmail.com
