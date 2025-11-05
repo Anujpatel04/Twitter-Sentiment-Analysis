@@ -37,12 +37,13 @@ ENV/
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# Model files (can be regenerated)
-*.joblib
-*.pkl
-*.h5
-*.pth
-*.model
+# Model files (uncomment if you want to exclude from Git)
+# Note: Model files are needed for the app to work
+# Uncomment these lines if models are too large for GitHub:
+# *.joblib
+# *.pkl
+# models/*.joblib
+# models/*.pkl
 
 # Large data files (add data/ to gitignore if dataset is too large)
 data/training.csv  # Too large for GitHub (227MB)

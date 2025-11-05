@@ -80,11 +80,15 @@ def serve_image(filename):
 
 
 if __name__ == '__main__':
+    # For local development
+    port = int(os.environ.get('PORT', 5000))
+    debug = os.environ.get('FLASK_ENV') == 'development'
+    
     print("\n" + "="*50)
     print("Twitter Sentiment Analysis Server Starting...")
     print("="*50)
-    print("Server running at: http://127.0.0.1:5000/")
-    print("Server running at: http://localhost:5000/")
+    print(f"Server running at: http://127.0.0.1:{port}/")
+    print(f"Server running at: http://localhost:{port}/")
     print("Press CTRL+C to stop the server")
     print("="*50 + "\n")
-    app.run(debug=True, host='127.0.0.1', port=5000)
+    app.run(debug=debug, host='0.0.0.0', port=port)
