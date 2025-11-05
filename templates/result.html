@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Result | Sentiment Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8 12h8M8 8h8M8 16h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <h1>Sentiment Analyzer</h1>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            {% if error %}
+            <div class="card error-card">
+                <div class="error-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 8v4M12 16h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h2>Error</h2>
+                <p>{{ error }}</p>
+                <a href="/" class="back-btn">Try Again</a>
+            </div>
+            {% else %}
+            <div class="card result-card">
+                <div class="result-header">
+                    <h2>Analysis Result</h2>
+                    <a href="/" class="analyze-again-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 12a9 9 0 019-9 9.75 9.75 0 016.74 2.74L21 8M3 12a9 9 0 009 9 9.75 9.75 0 016.74-2.74L21 16M3 12h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Analyze Another
+                    </a>
+                </div>
+
+                <div class="original-text-section">
+                    <label class="section-label">Original Text</label>
+                    <div class="text-display">
+                        {{ original_text }}
+                    </div>
+                </div>
+
+                <div class="sentiment-result">
+                    <div class="sentiment-badge {{ sentiment|lower }}">
+                        {% if sentiment|lower == 'positive' %}
+                        <svg class="sentiment-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 9V5a3 3 0 00-6 0v4M7 9h10a2 2 0 012 2v7a2 2 0 01-2 2H7a2 2 0 01-2-2v-7a2 2 0 012-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9 14a3 3 0 006 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        {% else %}
+                        <svg class="sentiment-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 9v4M12 17h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        {% endif %}
+                        <div class="sentiment-info">
+                            <span class="sentiment-label">Sentiment</span>
+                            <span class="sentiment-value">{{ sentiment }}</span>
+                        </div>
+                    </div>
+
+                    <div class="confidence-section">
+                        <label class="section-label">Confidence Score</label>
+                        <div class="confidence-display">
+                            <div class="confidence-bar">
+                                <div class="confidence-fill {{ sentiment|lower }}" style="width: {{ confidence }}%"></div>
+                            </div>
+                            <span class="confidence-value">{{ confidence }}%</span>
+                        </div>
+                        <p class="confidence-note">
+                            {% if confidence >= 80 %}
+                            Very confident prediction
+                            {% elif confidence >= 60 %}
+                            Confident prediction
+                            {% else %}
+                            Moderate confidence - text may be neutral or ambiguous
+                            {% endif %}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="insights">
+                    <h3>Model Information</h3>
+                    <div class="insight-grid">
+                        <div class="insight-item">
+                            <span class="insight-label">Model Accuracy</span>
+                            <span class="insight-value">79.99%</span>
+                        </div>
+                        <div class="insight-item">
+                            <span class="insight-label">Training Data</span>
+                            <span class="insight-value">1.6M+ Tweets</span>
+                        </div>
+                        <div class="insight-item">
+                            <span class="insight-label">Algorithm</span>
+                            <span class="insight-value">Logistic Regression</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </main>
+
+        <footer class="footer">
+            <p>Powered by Machine Learning • Trained on 1.6M+ tweets</p>
+        </footer>
+    </div>
+</body>
+</html>
