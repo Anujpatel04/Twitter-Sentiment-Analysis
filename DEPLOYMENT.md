@@ -78,40 +78,62 @@ After deployment, upload the model files to the hosting platform's file system o
 
 ---
 
-### Option 2: Railway.app (Recommended - FREE Tier Available)
+### Option 2: Railway.app ⭐ (Recommended - FREE Tier Available)
 
-**Best for:** Modern platform, good free tier, fast deployments
+**Best for:** Modern platform, good free tier, fast deployments, no cold starts
 
 #### Steps:
 
 1. **Sign up at [Railway.app](https://railway.app)** (free account)
+   - Use GitHub to sign up for easy integration
 
 2. **Create New Project:**
-   - Click "New Project"
+   - Click "New Project" or "+ New"
    - Select "Deploy from GitHub repo"
-   - Choose `Anujpatel04/Twitter-Sentiment-Analysis`
+   - Authorize Railway to access your GitHub
+   - Choose repository: `Anujpatel04/Twitter-Sentiment-Analysis`
 
-3. **Configure:**
-   - Railway will auto-detect Python
-   - **Start Command:** `gunicorn MLapp:app`
-   - Add environment variable: `PORT` (Railway sets this automatically)
+3. **Configure Service (Auto-detected):**
+   - Railway will automatically detect it's a Python app
+   - **Build Command:** `pip install --upgrade pip setuptools wheel && pip install -r requirements.txt`
+   - **Start Command:** `gunicorn MLapp:app` (from Procfile)
+   - **Port:** Railway sets `PORT` environment variable automatically
 
-4. **Deploy:**
-   - Railway automatically builds and deploys
-   - Get your live URL: `https://your-app-name.railway.app`
+4. **Environment Variables (Optional):**
+   - Go to Variables tab
+   - Add if needed:
+     - `PYTHON_VERSION` = `3.11.0`
+     - `FLASK_ENV` = `production`
 
-5. **Upload Model Files:**
-   - Use Railway CLI or upload via dashboard
+5. **Deploy:**
+   - Railway automatically starts building and deploying
+   - Watch the build logs in real-time
+   - Your app will be live at: `https://your-app-name.up.railway.app`
+
+6. **Custom Domain (Optional):**
+   - Go to Settings → Domains
+   - Add your custom domain
+   - Update DNS records as instructed
 
 **Pros:**
 - ✅ Free tier with $5 credit monthly
-- ✅ Fast deployments
-- ✅ No cold starts
+- ✅ Fast deployments (usually 2-3 minutes)
+- ✅ No cold starts (always running)
 - ✅ Easy GitHub integration
+- ✅ Real-time build logs
+- ✅ Automatic HTTPS
+- ✅ Simple configuration
 
 **Cons:**
-- ⚠️ Free tier has usage limits
+- ⚠️ Free tier has usage limits ($5/month credit)
 - ⚠️ Credit-based pricing after free tier
+- ⚠️ May need to upgrade for high traffic
+
+**Railway-Specific Notes:**
+- Model files are already in Git, so they'll be included automatically
+- Railway uses the `PORT` environment variable (already handled in code)
+- The `railway.json` file provides additional configuration
+- Railway auto-detects Python from `requirements.txt`
 
 ---
 
