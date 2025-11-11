@@ -36,37 +36,6 @@ This project implements a sentiment analysis system that classifies Twitter text
 - **Confidence Metrics**: Provides probability scores for each prediction
 - **Robust Preprocessing**: Handles various text formats and edge cases
 
-## 📁 Project Structure
-
-```
-TWITTER SENTIMENT ANALYSIS/
-├── MLapp.py                  # Main Flask application
-├── requirements.txt          # Python dependencies
-├── README.md                 # Project documentation
-│
-├── data/                     # Data directory
-│   └── training.csv         # Training dataset (1.6M tweets)
-│
-├── models/                   # Trained models
-│   ├── model_correct.joblib # Trained Logistic Regression model
-│   └── vectorizer_correct.pkl # Fitted CountVectorizer
-│
-├── notebooks/                # Jupyter notebooks
-│   └── exploring_twitter_sentiments_logisticreg.ipynb
-│
-├── scripts/                  # Utility scripts
-│   ├── train_model.py       # Model training script
-│   └── generate_metrics.py # Generate evaluation metrics
-│
-├── static/                   # Static files
-│   ├── styles.css           # Main stylesheet
-│   └── images/              # Generated graphs and images
-│
-└── templates/                # HTML templates
-    ├── index.html           # Home page
-    ├── result.html          # Results page
-    └── analytics.html       # Analytics dashboard
-```
 
 ## 🚀 Installation
 
@@ -121,56 +90,6 @@ TWITTER SENTIMENT ANALYSIS/
    - Click "Analyze Sentiment"
    - View the sentiment prediction (Positive/Negative) and confidence score
 
-### Viewing Analytics
-
-Access the analytics dashboard to see model performance metrics:
-- Navigate to: `http://localhost:5000/analytics`
-
-### API Endpoint (Future Enhancement)
-
-```python
-POST /api/predict
-Content-Type: application/json
-
-{
-    "text": "I love this product!"
-}
-
-Response:
-{
-    "sentiment": "positive",
-    "confidence": 92.5,
-    "probabilities": {
-        "negative": 7.5,
-        "positive": 92.5
-    }
-}
-```
-
-## 📊 Model Performance
-
-### Metrics
-- **Accuracy**: 79.99%
-- **Training Samples**: 1,600,000 tweets
-- **Test Samples**: 320,000 tweets (20% split)
-- **Features**: 684,358
-- **Algorithm**: Logistic Regression
-- **Solver**: LBFGS
-- **Max Iterations**: 2000
-
-### Evaluation Metrics
-- **Precision**: Calculated on test set
-- **Recall**: Calculated on test set
-- **F1-Score**: Calculated on test set
-- **Confusion Matrix**: Available in analytics dashboard
-
-### View Detailed Metrics
-Visit the `/analytics` route to see:
-- Confusion Matrix
-- Accuracy Trend
-- Precision, Recall, F1-Score visualization
-- ROC Curve (if available)
-- Model performance comparison charts
 
 ## 🛠️ Technologies Used
 
@@ -179,12 +98,6 @@ Visit the `/analytics` route to see:
 - **Flask 3.0.0**: Web framework
 - **scikit-learn 1.3.2**: Machine learning library
 - **joblib 1.3.2**: Model serialization
-
-### Frontend
-- **HTML5**: Structure
-- **CSS3**: Styling with modern design
-- **JavaScript**: Interactive features
-- **Inter Font**: Typography
 
 ### Machine Learning
 - **Logistic Regression**: Classification algorithm
@@ -195,8 +108,6 @@ Visit the `/analytics` route to see:
 - **Pandas**: Data manipulation
 - **NumPy**: Numerical operations
 
-### Analytics Dashboard
-Visit `/analytics` to see interactive charts and metrics.
 
 ## 🤝 Contributing
 
